@@ -1,0 +1,34 @@
+---
+title: "notes.qmd"
+author: "Kathryn :)"
+format: html
+editor: visual
+---
+
+## Quarto
+
+Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+
+Notes from 1/23/25
+
+Generating a script that will extract the female mean body mass and brain size into a vector for producing a bivariate plot:
+
+```{r}
+library(tidyverse)
+d <- read_csv("data-wrangling.csv")
+fbm <- d$Body_mass_female_mean
+bs <- d$Brain_Size_Species_Mean
+plot(fbm, bs)
+```
+
+To generate this plot in a logarithmic scale, utilize the plot(**log**("")) function.
+
+```{r}
+library("tidyverse")
+d <- read_csv("data-wrangling.csv")
+fbm <- d$Body_mass_female_mean
+bs <- d$Brain_Size_Species_Mean
+plot(log(fbm), log(bs))
+```
+
+Upon clicking "Enter", your plot will generate in a pop up window :)
